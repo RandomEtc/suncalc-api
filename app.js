@@ -6,6 +6,7 @@ var express = require("express"),
 var app = express.createServer();
 
 app.configure(function(){
+    app.enable("jsonp callback");
     app.use(express.bodyParser());
     app.use(app.router);
     app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
