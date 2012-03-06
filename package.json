@@ -8,7 +8,7 @@
   },
   "main": "app.js",
   "engines": {
-    "node": "~v0.4.11"
+    "node": "~v0.4.7"
   },
   "dependencies": {
     "suncalc": "~1.0.0",
