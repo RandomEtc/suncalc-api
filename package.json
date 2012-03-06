@@ -1,0 +1,18 @@
+{
+  "author": "Tom Carden <tom@tom-carden.co.uk> (http://www.tom-carden.co.uk)",
+  "name": "suncalc-api",
+  "description": "An HTTP Pony for @mourner's suncalc js library.",
+  "version": "0.0.0",
+  "repository": {
+    "url": ""
+  },
+  "main": "app.js",
+  "engines": {
+    "node": "~v0.4.11"
+  },
+  "dependencies": {
+    "suncalc": "~1.0.0",
+    "express": "~2.5.8"
+  },
+  "devDependencies": {}
+}
