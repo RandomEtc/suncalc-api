@@ -28,4 +28,12 @@ app.get('/times', requireFloat('lat'), requireFloat('lon'), function(req,res){
     res.send(SunCalc.getTimes(date, lat, lon));
 })
 
+
+app.get('/position', requireFloat('lat'), requireFloat('lon'), function(req,res){
+    var lat = parseFloat(req.query.lat),
+        lon = parseFloat(req.query.lon),
+        date = Date.parse(req.query.date) || Date.now();
+    res.send(SunCalc.getPosition(date, lat, lon));
+})
+
 app.listen(process.env.PORT);
