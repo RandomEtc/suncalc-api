@@ -11,7 +11,17 @@ app.configure(function(){
     app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
 
-app.get('/times/', function(req,res){
+function requireFloat(name) {
+    return function(req,res, next) {
+        if (name in req.query && !isNaN(parseFloat(req.query[name]))) {
+            return next();
+        } else {
+            res.send(name + " required; must be a float.", 400);
+        }
+    }
+}
+
+app.get('/times', requireFloat('lat'), requireFloat('lon'), function(req,res){
     var lat = parseFloat(req.query.lat),
         lon = parseFloat(req.query.lon),
         date = Date.parse(req.query.date) || Date.now();
