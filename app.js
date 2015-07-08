@@ -49,4 +49,9 @@ app.get('/position', requireFloat('lat'), requireFloat('lon'), function(req,res)
     res.send(SunCalc.getPosition(date, lat, lon));
 })
 
+app.get('/illumination', function(req,res){
+    var date = Date.parse(req.query.date) || Date.now();
+    res.send(SunCalc.getMoonIllumination(date));
+})
+
 app.listen(process.env.PORT);
