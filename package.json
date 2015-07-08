@@ -11,7 +11,7 @@
     "node": "~v0.4.7"
   },
   "dependencies": {
-    "suncalc": "~1.0.0",
+    "suncalc": "~1.6.0",
     "express": "~2.5.8"
   },
   "devDependencies": {}
